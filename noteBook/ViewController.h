@@ -13,5 +13,9 @@
 @property (strong, nonatomic) IBOutlet UITextView *textView;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 
+@property (nonatomic,copy) NSString* name;
+@property(nonatomic,copy) NSString* content;
+@property (nonatomic,assign) NSInteger rowNo;
+
 @end
 

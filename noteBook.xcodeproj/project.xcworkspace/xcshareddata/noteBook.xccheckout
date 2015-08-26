@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>412DF5A7-D759-4310-B678-1D226D77E27E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>noteBook</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D5A2E89305522DB343119D6B1BF54138C9D1F472</key>
 		<string>https://github.com/wcxdell/noteBook.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>noteBook.xcodeproj/project.xcworkspace</string>
+	<string>noteBook.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D5A2E89305522DB343119D6B1BF54138C9D1F472</key>
