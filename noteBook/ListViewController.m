@@ -23,9 +23,22 @@
 //    self.tableView.dataSource = self;
 //    self.tableView.delegate = self;
     
+    
+//    下面这两句是用storybord上面绘制的view来直接作为viewController的页面。
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     _viewController = [storyboard instantiateViewControllerWithIdentifier:@"editNoteBook"];
+    
+//    下面这句可以不用storybord来进行viewcontroller的跳转，需要在viewcontroller上面进行绘制。
+//    _viewController = [[ViewController alloc] init];
+    
+    
+//    UIButton* button = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [button setTitle:@"玩耍" forState:UIControlStateNormal];
+//    button.frame = CGRectMake(30,30,40,40);
+//    [self.view addSubview:button];
+    
+    
 //    self.navi.title = @"记事本列表";
     
     

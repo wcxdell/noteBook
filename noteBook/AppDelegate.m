@@ -18,7 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.listViewController = [[ListViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//    下面这句是纯代码
+    self.listViewController = [[ListViewController alloc] initWithStyle:UITableViewStylePlain];
+//    下面两句是用原有的storyboard
+//    UIStoryboard * story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    self.listViewController = [story instantiateViewControllerWithIdentifier:@"listView"];
+    
     self.naviController = [[UINavigationController alloc] initWithRootViewController:self.listViewController];
     self.window.rootViewController = self.naviController;
     [self.window makeKeyAndVisible];
