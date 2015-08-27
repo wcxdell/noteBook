@@ -21,8 +21,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     [UIApplication sharedApplication].statusBarHidden = YES;
     self.navigationItem.title = @"详细内容";
-    self.textView.text = self.name;
-    self.textField.text = self.content;
+    self.textView.text = self.content;
+    self.textField.text = self.name;
     self.textView.editable = NO;
     self.textField.enabled = NO;
     
@@ -41,9 +41,6 @@
     self.textView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     self.textView.layer.cornerRadius = 2.0;
     
-    self.textField.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    self.textField.layer.borderWidth = 0.5;
-    self.textField.layer.cornerRadius = 2.0;
 }
 
 -(void) beginEdit:(id) sender{
@@ -58,9 +55,9 @@
         
         AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
         
-        [appDelegate.viewController.name replaceObjectAtIndex:self.rowNo withObject:self.textView.text];
+        [appDelegate.listViewController.name replaceObjectAtIndex:self.rowNo withObject:self.textField.text];
         
-        [appDelegate.viewController.content replaceObjectAtIndex:self.rowNo withObject:self.textField.text];
+        [appDelegate.listViewController.content replaceObjectAtIndex:self.rowNo withObject:self.textView.text];
         
         self.textField.enabled = NO;
         self.textView.editable = NO;

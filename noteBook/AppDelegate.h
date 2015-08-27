@@ -21,7 +21,7 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-@property (strong,nonatomic) ListViewController* viewController;
+@property (strong,nonatomic) ListViewController* listViewController;
 @property (strong,nonatomic) UINavigationController* naviController;
 
 
