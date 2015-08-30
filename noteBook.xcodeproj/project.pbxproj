@@ -16,6 +16,8 @@
 		D301DA421B8C5979004BEB00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D301DA401B8C5979004BEB00 /* LaunchScreen.xib */; };
 		D301DA4E1B8C5979004BEB00 /* noteBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D301DA4D1B8C5979004BEB00 /* noteBookTests.m */; };
 		D3151AD41B8DA2E00002F5F6 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3151AD31B8DA2E00002F5F6 /* ListViewController.m */; };
+		D3A26F331B93161700BC2D5B /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A26F321B93161700BC2D5B /* Note.m */; };
+		D3A26F361B931F3A00BC2D5B /* CreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A26F351B931F3A00BC2D5B /* CreateViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,10 @@
 		D301DA4D1B8C5979004BEB00 /* noteBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = noteBookTests.m; sourceTree = "<group>"; };
 		D3151AD21B8DA2E00002F5F6 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		D3151AD31B8DA2E00002F5F6 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		D3A26F311B93161700BC2D5B /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = ../Note.h; sourceTree = "<group>"; };
+		D3A26F321B93161700BC2D5B /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = ../Note.m; sourceTree = "<group>"; };
+		D3A26F341B931F3A00BC2D5B /* CreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateViewController.h; sourceTree = "<group>"; };
+		D3A26F351B931F3A00BC2D5B /* CreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,10 @@
 				D301DA2E1B8C5979004BEB00 /* Supporting Files */,
 				D3151AD21B8DA2E00002F5F6 /* ListViewController.h */,
 				D3151AD31B8DA2E00002F5F6 /* ListViewController.m */,
+				D3A26F311B93161700BC2D5B /* Note.h */,
+				D3A26F321B93161700BC2D5B /* Note.m */,
+				D3A26F341B931F3A00BC2D5B /* CreateViewController.h */,
+				D3A26F351B931F3A00BC2D5B /* CreateViewController.m */,
 			);
 			path = noteBook;
 			sourceTree = "<group>";
@@ -230,6 +240,8 @@
 				D3151AD41B8DA2E00002F5F6 /* ListViewController.m in Sources */,
 				D301DA341B8C5979004BEB00 /* AppDelegate.m in Sources */,
 				D301DA311B8C5979004BEB00 /* main.m in Sources */,
+				D3A26F361B931F3A00BC2D5B /* CreateViewController.m in Sources */,
+				D3A26F331B93161700BC2D5B /* Note.m in Sources */,
 				D301DA3A1B8C5979004BEB00 /* ViewController.m in Sources */,
 				D301DA371B8C5979004BEB00 /* noteBook.xcdatamodeld in Sources */,
 			);

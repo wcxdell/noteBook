@@ -26,8 +26,10 @@
     self.textView.editable = NO;
     self.textField.enabled = NO;
     
+    
     UIBarButtonItem* rightBn = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(beginEdit:)];
     self.navigationItem.rightBarButtonItem = rightBn;
+    
     
 }
 

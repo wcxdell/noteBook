@@ -8,8 +8,17 @@
 
 #import "ListViewController.h"
 #import "ViewController.h"
+#import "AppDelegate.h"
+#import "Note.h"
+#import "CreateViewController.h"
+@interface ListViewController()
+@property AppDelegate* appDelegate;
+@end
 @implementation ListViewController{
     ViewController * _viewController;
+    CreateViewController* _createViewControoler;
+    NSMutableArray * noteArray;
+    Note * note;
 }
 
 -(void)viewDidLoad{
@@ -20,6 +29,10 @@
     
     _name = [NSMutableArray arrayWithObjects:@"1", @"2",@"3",@"4",@"5",nil];
     _content = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
+    
+    UIBarButtonItem* rightBn = [[UIBarButtonItem alloc] initWithTitle:@"新建" style:UIBarButtonItemStylePlain target:self action:@selector(create)];
+    self.navigationItem.rightBarButtonItem = rightBn;
+    
 //    self.tableView.dataSource = self;
 //    self.tableView.delegate = self;
     
@@ -28,6 +41,8 @@
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     _viewController = [storyboard instantiateViewControllerWithIdentifier:@"editNoteBook"];
+    
+    _createViewControoler = [storyboard instantiateViewControllerWithIdentifier:@"createViewController"];
     
 //    下面这句可以不用storybord来进行viewcontroller的跳转，需要在viewcontroller上面进行绘制。
 //    _viewController = [[ViewController alloc] init];
@@ -43,10 +58,28 @@
     
     
 //    _viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"editNoteBook"];
+    
+    
+    
+    self.appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    
+    
+    [self fetch];
+//    NSLog(@"%ld",noteArray.count);
+}
+
+-(void)fetch{
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"Note" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSError* error = nil;
+    noteArray = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
 }
 
 -(void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self fetch];
     [self.tableView reloadData];
 }
 
@@ -62,19 +95,21 @@
     
     NSUInteger rowNo = indexPath.row;
     
-    cell.textLabel.text = _name[rowNo];
+    note = noteArray[rowNo];
+    
+    cell.textLabel.text = note.name;
     
     cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     //    cell.accessoryType = UITableViewCellAccessoryCheckmark;
     //    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
-    cell.detailTextLabel.text = _content[rowNo];
+    cell.detailTextLabel.text = note.content;
     return cell;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return _name.count;
+    return noteArray.count;
 }
 
 -(void)tableView:(UITableView*) tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
@@ -85,6 +120,10 @@
     _viewController.content = _content[rowNo];
     _viewController.rowNo = rowNo;
     [self.navigationController pushViewController:_viewController animated:YES];
+}
+
+-(void) create{
+    [self.navigationController pushViewController:_createViewControoler animated:YES];
 }
 
 

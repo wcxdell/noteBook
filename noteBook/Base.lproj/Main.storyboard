@@ -52,7 +52,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ui8-2x-UPn">
-                                <rect key="frame" x="42" y="146" width="296" height="238"/>
+                                <rect key="frame" x="42" y="163" width="296" height="238"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -69,6 +69,45 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="347.5" y="242.5"/>
+        </scene>
+        <!--Create View Controller-->
+        <scene sceneID="W63-0E-jcx">
+            <objects>
+                <viewController storyboardIdentifier="createViewController" id="UOF-TP-dKD" customClass="CreateViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mhJ-ab-u5K"/>
+                        <viewControllerLayoutGuide type="bottom" id="fAo-nu-jkQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YFQ-OE-Pao">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="记事本标题" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WU-hV-3EW">
+                                <rect key="frame" x="39" y="90" width="296" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="finish:" destination="UOF-TP-dKD" eventType="editingDidEndOnExit" id="o6m-Az-ZGs"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="diU-9o-y7N">
+                                <rect key="frame" x="39" y="160" width="296" height="238"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="textField" destination="3WU-hV-3EW" id="c6Q-Jd-cwI"/>
+                        <outlet property="textView" destination="diU-9o-y7N" id="qIM-iD-P8Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spn-4J-OPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="239"/>
         </scene>
     </scenes>
 </document>
