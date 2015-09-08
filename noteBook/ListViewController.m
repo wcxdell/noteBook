@@ -115,11 +115,18 @@
 -(void)tableView:(UITableView*) tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSInteger rowNo = indexPath.row;
     //    NSLog(@"123");
-    
-    _viewController.name = _name[rowNo];
-    _viewController.content = _content[rowNo];
+    note = noteArray[rowNo];
+    _viewController.name = note.name;
+    _viewController.content = note.content;
     _viewController.rowNo = rowNo;
+//    NSError * error;
     [self.navigationController pushViewController:_viewController animated:YES];
+
+    //    删除功能
+
+    //    [self.appDelegate.managedObjectContext deleteObject:note];
+
+    //    [self.appDelegate.managedObjectContext save:&error];
 }
 
 -(void) create{

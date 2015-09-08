@@ -60,10 +60,10 @@
             if([self.appDelegate.managedObjectContext save:&error]){
                 [[[UIActionSheet alloc] initWithTitle:@"保存成功" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
             }else{
-                NSLog(@"保存出错");
+                [[[UIActionSheet alloc] initWithTitle:@"保存失败" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
             }
         }else{
-            NSLog(@"保存出错");
+            [[[UIActionSheet alloc] initWithTitle:@"信息填写不完全" delegate:nil cancelButtonTitle:@"确定" destructiveButtonTitle:nil otherButtonTitles:nil] showInView:self.view];
         }
     }
     
